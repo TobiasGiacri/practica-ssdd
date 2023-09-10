@@ -23,12 +23,12 @@ console.log(dividir(10, 2)); // Resultado: 5
 //===============================================================
 const prompt = require('prompt-sync')();
 
-let saludar = function saludar(nombre) {
+function saludar(nombre) {
     console.log('Hola ' + nombre);
 }
-let hola = function procesarEntradaUsuario(callback) {
+function procesarEntradaUsuario(callback) {
     var nombre = prompt('Por favor ingresa tu nombre.');
-    callback(nombre);
+    return callback(nombre);
 }
-setTimeout(hola(saludar));
+setTimeout(procesarEntradaUsuario,4000,saludar)
 console.log('Gracias, hasta luego.');
